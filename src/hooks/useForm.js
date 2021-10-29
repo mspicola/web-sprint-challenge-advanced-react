@@ -1,8 +1,8 @@
 import useLocalStorage from "./useLocalStorage";
 
-const useForm = (initialValues) => 
+const useForm = (initialValue) => 
 {
-    const [values, setValues] = useLocalStorage("fields", initialValues);
+    const [values, setValues] = useLocalStorage("fields", initialValue);
 
     const handleChanges = (e) =>
     {
@@ -15,7 +15,7 @@ const useForm = (initialValues) =>
     const clearForm = (e) =>
     {
         e.preventDefault();
-        setValues(initialValues);
+        setValues(initialValue);
     };
 
     return ([values, handleChanges, clearForm]);
